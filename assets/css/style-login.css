@@ -98,13 +98,13 @@ button {
 
 main {
     grid-area: main;
-    background-image: url(../img/bg.jpg);
+    background-image: url(https://repositorios01.blob.core.windows.net/admisiones-becas-salesforce-devl/template/solicitantes/src/images/bg.jpg);
     padding: 20px;
 }
 
 aside {
     grid-area: aside;
-    background-image: url(../img/background-login.jpg);
+    background-image: url(https://repositorios01.blob.core.windows.net/admisiones-becas-salesforce-devl/template/solicitantes/src/images/background-login.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -115,7 +115,7 @@ aside {
 #slide2,
 #slide3,
 #slide4 {
-    background-image: url(../img/background-login.jpg);
+    background-image: url(https://repositorios01.blob.core.windows.net/admisiones-becas-salesforce-devl/template/solicitantes/src/images/background-login.jpg);
 }
 
 footer {
