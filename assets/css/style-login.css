@@ -32,7 +32,10 @@ h2 {
 
 h2.importante {
     color: #0091f3;
+}
 
+h4{
+    margin: 0;
 }
 
 p {
@@ -64,8 +67,11 @@ button {
 
 }
 
+input[id*="loginButton"]{
+    text-shadow: 1px 1px 1px #0000004f;
+}
 
-.btn-grad {
+.btn-grad, input[id*="loginButton"] {
     background-image: linear-gradient(to right, #036caf 0%, #26a0da 51%, #0877bd 100%);
     padding: 10px 32px;
     text-align: center;
@@ -76,15 +82,86 @@ button {
     border-radius: 10px;
     display: block;
     cursor: pointer;
+    border: none;
 }
 
-.btn-grad:hover {
+.btn-grad:hover, input[id*="loginButton"]:hover {
     background-position: right center;
     /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
 }
 
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: 1;
+    display: none;
+  }
+  .hr-text:before {
+      content: '';
+      background: linear-gradient(to right, transparent, #ffffff, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+  
+  .hr-text:after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      color: black;
+      padding: 0 .5em;
+      line-height: 1.5em;
+      color: #ffffff;
+      background-color: #00013a;
+    }
+
+
+input[id*="loginButton"] {
+    margin-bottom: 15px;
+}
+
+.btn_login {
+    text-align: -webkit-center;
+}
+
+.slds-form-element {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+b.LoginPageLinkStyle {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* label.slds-form-element__label,
+span[id*="loginPage"] {
+    display: none;
+} */
+
+[id*="loginForm"] h1, label.slds-form-element__label, a[aria-label="New User"] {
+    display: none;
+}
+
+table.messageTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a[aria-label="Forgot Your Password"] {
+    text-decoration: none;
+}
 
 .container {
     display: grid;
@@ -99,7 +176,8 @@ button {
 main {
     grid-area: main;
     background-image: url(https://repositorios01.blob.core.windows.net/admisiones-becas-salesforce-devl/template/solicitantes/src/images/bg.jpg);
-    padding: 20px;
+    padding: 2em;
+    background-size: cover;
 }
 
 aside {
@@ -130,6 +208,24 @@ footer {
 footer span {
     color: #0091f3;
 }
+
+/* agregar para que rellene el espacio blanco en dispositivos grandes ---> */
+body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas:
+      "main aside"
+      "footer footer";
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 2fr 1fr;
+    min-height: 100vh;
+  }
+
+  /* <---- agregar para que rellene el espacio blanco en dispositivos grandes */
 
 @media only screen and (max-width: 1024px) {
     .container {
@@ -175,7 +271,9 @@ footer span {
     text-align: center;
 }
 
-
+.cell.cell-4 h2 {
+    margin-bottom: 0;
+}
 
 .cell-1 {
     flex-basis: 50%;
@@ -201,6 +299,14 @@ footer span {
 }
 
 @media screen and (max-width: 768px) {
+    .hr-text{
+        display: block;
+        margin: 20px 0px;
+    }
+
+    .cell-5 h2 {
+        margin-top: -14px;
+    }
     .cell {
         flex-basis: 100%;
         margin-right: 0;
@@ -220,12 +326,17 @@ footer span {
     }
 }
 
+.messageText:Not(h4) {
+    color: white;
+    margin-bottom: 10px;
+}
 .input-icon-wrap {
     /* */
     display: flex;
     flex-direction: row;
     max-width: 80%;
     margin-bottom: 15px;
+    margin-top: 18px;
 }
 
 
@@ -234,19 +345,20 @@ footer span {
     background: #0091f3;
 }
 
-.input-with-icon {
+.input-with-icon, input {
     border: none;
     flex: 1;
 }
 
 .input-icon,
-.input-with-icon {
-    padding: 5px 10px;
+.input-with-icon, input {
+    padding: 8px 10px;
 }
 
-.input-with-icon {
+.input-with-icon, input {
 
     border-radius: 0px 16px 16px 0px;
+    margin-bottom:0px
 }
 
 .input-icon {
