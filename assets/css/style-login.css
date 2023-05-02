@@ -67,11 +67,11 @@ button {
 
 }
 
-input[id*="loginButton"]{
+input[id*="loginButton"], input[id*="submit"]{
     text-shadow: 1px 1px 1px #0000004f;
 }
 
-.btn-grad, input[id*="loginButton"] {
+.btn-grad, input[id*="loginButton"], input[id*="submit"] {
     background-image: linear-gradient(to right, #036caf 0%, #26a0da 51%, #0877bd 100%);
     padding: 10px 32px;
     text-align: center;
@@ -574,3 +574,48 @@ input:focus {
     color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
 }
+
+
+/* PANTALLA OLVIDÉ MI CONTRASEÑA */
+
+a.back-to-login.frgt-pass {
+    text-decoration: none;
+    color: white;
+}
+
+.slds-form-element.frgt-pass {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(3, 1fr);
+    /* align-items: center; */
+    /* Centrar verticalmente los elementos */
+    justify-items: center;
+    /* Centrar horizontalmente los elementos */
+}
+
+span.input-icon.frgt-pass {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: end;
+}
+
+input.slds-input.frgt-pass {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+input[id*="submit"].frgt-pass {
+    grid-area: 2 / 1 / 3 / 3;
+    /* margin-left: 15px; */
+    margin-top: 10px;
+}
+
+a.frgt-pass {
+    grid-area: 3 / 1 / 4 / 3;
+    margin-top: 10px;
+}
+
+.submit-button {
+    grid-column: 1 / span 3;
+    margin-top: 10px;
+}
+
+/* <----- PANTALLA OLVIDÉ MI CONTRASEÑA */
